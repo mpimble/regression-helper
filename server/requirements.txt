@@ -1,4 +1,5 @@
-fastapi
+fastapi[standard]
 uvicorn
 passlib[bcrypt]
-python-jose
+jwt
+pydantic
