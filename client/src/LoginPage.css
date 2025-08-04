@@ -1,0 +1,18 @@
+.login-form input {
+    border: 0;
+    outline: none;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    text-overflow: ellipsis;
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+.login-form button {
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
