@@ -7,6 +7,7 @@ import Wrapper from './Wrapper.tsx';
 import LoginPage from './LoginPage.tsx';
 import Dashboard from './Dashboard.tsx';
 import AccountPage from './AccountPage.tsx';
+import Protected from './protected.tsx';
 
 const router = createBrowserRouter([
   {
@@ -15,8 +16,13 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <App /> },
       { path: 'login', element: <LoginPage /> },
-      { path: 'dashboard', element: <Dashboard /> },
-      { path: 'account', element: <AccountPage /> }
+      {
+        element: <Protected />,
+        children: [
+          { path: 'dashboard', element: <Dashboard /> },
+          { path: 'account', element: <AccountPage /> }
+        ]
+      }
     ],
   },
 ]);
