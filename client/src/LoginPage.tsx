@@ -2,6 +2,8 @@ import { useState } from "react"
 import axios from "axios";
 
 import "./LoginPage.css"
+import { isAuthenticated } from "./auth";
+import { Navigate } from "react-router-dom";
 
 function LoginPage() {
     const [username, setUsername] = useState('');
@@ -22,7 +24,9 @@ function LoginPage() {
                     },
                 });
 
-            console.log(response.data)
+            localStorage.setItem('accessToken', response.data.access_token);
+
+
         }
         catch (err) {
             console.error(err);
@@ -30,6 +34,10 @@ function LoginPage() {
 
     }
 
+
+    if (isAuthenticated()) {
+        return <Navigate to="/dashboard" />;
+    }
 
     return (
         <div>
