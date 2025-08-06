@@ -1,10 +1,6 @@
 import { jwtDecode } from "jwt-decode";
+import type { TokenData } from "./dataifs";
 
-interface TokenData {
-    sub: string;
-    exp: number;
-    [key: string] : any;
-}
 
 export function isAuthenticated(): boolean {
     const token = localStorage.getItem("accessToken");
