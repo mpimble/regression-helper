@@ -8,6 +8,7 @@ import LoginPage from './LoginPage.tsx';
 import Dashboard from './Dashboard.tsx';
 import AccountPage from './AccountPage.tsx';
 import Protected from './protected.tsx';
+import NewReg from './NewReg.tsx';
 
 const router = createBrowserRouter([
   {
@@ -20,7 +21,8 @@ const router = createBrowserRouter([
         element: <Protected />,
         children: [
           { path: 'dashboard', element: <Dashboard /> },
-          { path: 'account', element: <AccountPage /> }
+          { path: 'account', element: <AccountPage /> },
+          { path: 'new-regression', element: <NewReg /> }
         ]
       }
     ],
