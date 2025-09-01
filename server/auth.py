@@ -6,10 +6,14 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from passlib.context import CryptContext
 from pydantic import BaseModel
+from os import getenv
+from dotenv import load_dotenv
 
-SECRET_KEY = "d706d4a13a07c9844e066d5f6bba33bc1df04da0e7c78634f31aaf4419ae2ff2"
+load_dotenv()
+
+SECRET_KEY = getenv("SECRET_KEY")
 ALGORITHM = "HS256"
-ACCESS_TOKEN_EXPIRE_MINUTES = 30
+ACCESS_TOKEN_EXPIRE_MINUTES = 120
 
 fake_users_db = {
     "johndoe": {
