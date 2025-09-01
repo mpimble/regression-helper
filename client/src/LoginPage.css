@@ -16,3 +16,7 @@
     padding: 0.5rem 1rem;
     cursor: pointer;
 }
+
+.show-pass {
+    font-size: 0.75rem;
+}
