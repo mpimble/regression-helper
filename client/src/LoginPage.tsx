@@ -8,6 +8,7 @@ import { Navigate } from "react-router-dom";
 function LoginPage() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [showPass, setShowPass] = useState(false);
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -26,6 +27,7 @@ function LoginPage() {
 
             localStorage.setItem('accessToken', response.data.access_token);
 
+            window.location.href = '/dashboard';
 
         }
         catch (err) {
@@ -33,7 +35,6 @@ function LoginPage() {
         }
 
     }
-
 
     if (isAuthenticated()) {
         return <Navigate to="/dashboard" />;
@@ -54,11 +55,14 @@ function LoginPage() {
 
                 <div>
                     <input
-                        type="text"
+                        type={showPass ? 'text' : 'password'}
                         placeholder="Password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                     />
+                </div>
+                <div className="show-pass" onClick={() => setShowPass(prev => !prev)}>
+                    <p>Show Password</p>
                 </div>
                 <div>
                     <button type="submit">Login</button>
