@@ -6,12 +6,12 @@ import { useState, useEffect } from 'react'
 
 function App() {
   const [fullName, setFullName] = useState("");
-
   useEffect(() => {
     getFullName().then(result => {
       setFullName(result);
     });
   }, []);
+
 
   if (isAuthenticated()) {
     return (
