@@ -9,6 +9,8 @@ import Dashboard from './Dashboard.tsx';
 import AccountPage from './AccountPage.tsx';
 import Protected from './protected.tsx';
 import NewReg from './NewReg.tsx';
+import NotFoundPage from './NotFoundPage.tsx';
+import Logout from './Logout.tsx';
 
 const router = createBrowserRouter([
   {
@@ -17,6 +19,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <App /> },
       { path: 'login', element: <LoginPage /> },
+      { path: 'logout', element: <Logout /> },
       {
         element: <Protected />,
         children: [
@@ -24,7 +27,8 @@ const router = createBrowserRouter([
           { path: 'account', element: <AccountPage /> },
           { path: 'new-regression', element: <NewReg /> }
         ]
-      }
+      },
+      { path: '*', element: <NotFoundPage /> }
     ],
   },
 ]);
