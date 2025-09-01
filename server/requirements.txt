@@ -3,3 +3,6 @@ uvicorn
 passlib[bcrypt]
 PyJWT
 pydantic
+pandas
+numpy
+scikit-learn
